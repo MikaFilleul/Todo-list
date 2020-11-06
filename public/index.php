@@ -18,6 +18,9 @@ $settings($containerBuilder);
 $dependencies = require __DIR__ . '/../app/core/dependencies.php';
 $dependencies($containerBuilder);
 
+$controllers = require __DIR__ . '/../app/core/controllers.php';
+$controllers($containerBuilder);
+
 $container = $containerBuilder->build();
 
 AppFactory::setContainer($container);

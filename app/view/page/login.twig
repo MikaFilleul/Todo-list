@@ -1,4 +1,4 @@
-{% extends "/page/main.twig" %}
+{% extends "/template/main.twig" %}
 
 {% block title %}Log In{% endblock %}
 
@@ -35,7 +35,7 @@
   <div class="col-sm-5">
     <div class="h-100 d-flex flex-column justify-content-center align-items-center">
     
-      <img class="rounded img-icon mb-5" src="img/to-do-list.svg" alt="">
+      <img class="img-icon mb-2" src="img/logo.svg" alt="TODO LIST">
       <div class="card text-white bg-dark mb-3 div-w75">
         <div class="card-header">
           {% block formTitle %}Log In{% endblock %}
@@ -56,7 +56,7 @@
                 aria-describedby="passwordHint"
               />
               <small id="passwordHint" class="form-text text-muted">
-                Don't share your password with anyone else.
+                Don't share your password with anyone.
               </small>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="card text-white bg-dark div-w75">
+      <div class="card text-white bg-dark mb-3 div-w75">
         <div class="card-body">
           {% block formFooter %}
           <span>New to Todo? 

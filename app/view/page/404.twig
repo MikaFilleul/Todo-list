@@ -1,11 +1,24 @@
-{% extends "/page/main.twig" %}
+{% extends "/template/main.twig" %}
 
 {% block title %}404{% endblock %}
 
 {% block page %}
-<div class="jumbotron bg-dark">
-  <h1 class="display-4">Error 404!</h1>
-  <p class="lead">Page not found!</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Go back</a>
+<div class="row h-100">
+  <div class="col-sm-7">
+    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+      <div class="div-w75">
+        <h1 class="display-4">Error 404!</h1>
+        <p class="lead">Page not found!</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Go back</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-5">
+    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+      <img class="img-icon" src="img/error404.svg" alt="ERROR 404">
+    </div>
+  </div>
+  
 </div>
 {% endblock %}
