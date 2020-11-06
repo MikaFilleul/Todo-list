@@ -1,0 +1,8 @@
+# Dependencies
+/vendor
+
+# Environment
+.env
+
+# Compiled files
+# /public/stylesheet

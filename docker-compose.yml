@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  # Web server
+  web:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    container_name: adonis_todo_web
+    ports:
+    - 8010:80
+    volumes:
+    - .:/srv/app
+    depends_on:
+    - mysql
+  # Database server
+  mysql:
+    image: mysql:5.7
+    container_name: adonis_todo_sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todos
+      MYSQL_USER: todos-user
+      MYSQL_PASSWORD: todos-pwd
+    ports:
+      - 8011:3306
+    volumes:
+    - .docker/:/docker-entrypoint-initdb.d
