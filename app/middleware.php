@@ -4,6 +4,7 @@ declare(strict_types=1);
 use Slim\App;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Response;
+use Todo\Controllers\_404Controller;
 
 return function (App $app) {
   $settings = $app->getContainer()->get('settings');
@@ -20,8 +21,9 @@ return function (App $app) {
     Throwable $exception,
     bool $displayErrorDetails
   ) use ($app) {
-    $response = new Response();
-    $_404Controller = $app->getContainer()->get('_404Controller');
+    $response = (new Response())->withStatus(404);
+    $container = $app->getContainer();
+    $_404Controller = new _404Controller($container);
     return $_404Controller($request,$response);
   };
   

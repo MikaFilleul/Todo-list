@@ -1,0 +1,33 @@
+<?php
+
+use DI\ContainerBuilder;
+use Slim\Views\Twig;
+
+return function () {
+  $containerBuilder = new ContainerBuilder();
+
+  $containerBuilder->addDefinitions([
+    'db' => function () : PDO {
+      $host = $_ENV['DB_HOST'];
+      $port = $_ENV['DB_PORT'];
+      $name = $_ENV['DB_NAME'];
+      $user = $_ENV['DB_USER'];
+      $pass = $_ENV['DB_PASS'];
+      $dsn = "mysql:host=$host;port=$port;dbname=$name;charset=utf8;";
+
+      try {
+        $pdo = new PDO($dsn, $user, $pass, [ PDO::ATTR_PERSISTENT => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ]);
+      } catch (PDOException $e) {
+        echo 'Connection failed : ' . $e->getMessage();
+      }
+      
+      return $pdo;
+    },
+    'view' => function () : Twig {
+      $path = $_ENV['VIEWS_PATH'];
+      return Twig::create(__DIR__ . $path, [ "cache" => false ]);
+    }
+  ]);
+
+  return $containerBuilder->build();
+};

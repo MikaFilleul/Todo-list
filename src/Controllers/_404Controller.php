@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace Todo\Controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class SignupController extends BaseController
+class _404Controller extends Controller
 {
   public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
-    return $this->container->get('view')->render($response, "/page/signup.twig");
+    return $this->view->render($response, "/page/404.twig");
   }
 }
