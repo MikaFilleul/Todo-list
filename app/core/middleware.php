@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use Slim\App;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\Psr7\Response;
 
 return function (App $app) {
   $settings = $app->getContainer()->get('settings');
@@ -16,9 +17,10 @@ return function (App $app) {
   
   $customErrorHandler = function (
     ServerRequestInterface $request,
-    Throwable $exception
+    Throwable $exception,
+    bool $displayErrorDetails
   ) use ($app) {
-    $response = $app->getResponseFactory()->createResponse();
+    $response = new Response();
     $_404Controller = $app->getContainer()->get('_404Controller');
     return $_404Controller($request,$response);
   };

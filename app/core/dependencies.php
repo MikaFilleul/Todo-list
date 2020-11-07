@@ -18,7 +18,7 @@ return function (ContainerBuilder $containerBuilder) {
       return new PDO($dsn, $user, $pass, [ PDO::ATTR_PERSISTENT => false ]);
     },
     'view' => function () : Twig {
-      return Twig::create(__DIR__ . "/../view", [ "cache" => false ]);
+      return Twig::create(__DIR__ . "/../View", [ "cache" => false ]);
     }
   ]);
 };
