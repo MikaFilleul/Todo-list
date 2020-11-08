@@ -5,6 +5,7 @@ use Slim\App;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Response;
 use Todo\Controllers\_404Controller;
+use Slim\Exception\HttpNotFoundException;
 
 return function (App $app) {
   $settings = $app->getContainer()->get('settings');
@@ -24,8 +25,8 @@ return function (App $app) {
     $response = (new Response())->withStatus(404);
     $container = $app->getContainer();
     $_404Controller = new _404Controller($container);
-    return $_404Controller($request,$response);
+    return $_404Controller->render($request,$response);
   };
   
-  $errorMiddleware->setErrorHandler(Slim\Exception\HttpNotFoundException::class, $customErrorHandler);
+  $errorMiddleware->setErrorHandler(HttpNotFoundException::class, $customErrorHandler);
 };

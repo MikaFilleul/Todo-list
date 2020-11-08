@@ -12,8 +12,7 @@ $container = $dependencies();
 $settings = require __DIR__ . '/../app/settings.php';
 $settings($container);
 
-// $controllers = require __DIR__ . '/../app/controllers.php';
-// $controllers($container);
+require __DIR__ . '/../app/models.php';
 
 AppFactory::setContainer($container);
 

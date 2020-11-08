@@ -3,17 +3,14 @@ declare(strict_types=1);
 
 namespace Todo\Controllers;
 
-use DI\Container;
-use PDO;
+use Psr\Container\ContainerInterface;
 use Slim\Views\Twig;
 
 class Controller
 {
-  protected PDO $db;
-  protected Twig $view;
+  protected ContainerInterface $container;
 
-  public function __construct(Container $container) {
-    $this->db = $container->get('db');
-    $this->view = $container->get('view');
+  public function __construct(ContainerInterface $container) {
+    $this->container = $container;
   }
 }

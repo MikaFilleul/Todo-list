@@ -16,12 +16,11 @@ return function () {
       $dsn = "mysql:host=$host;port=$port;dbname=$name;charset=utf8;";
 
       try {
-        $pdo = new PDO($dsn, $user, $pass, [ PDO::ATTR_PERSISTENT => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ]);
+        $pdo = new PDO($dsn, $user, $pass, [ PDO::ATTR_PERSISTENT => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ]);
+        return $pdo;
       } catch (PDOException $e) {
         echo 'Connection failed : ' . $e->getMessage();
       }
-      
-      return $pdo;
     },
     'view' => function () : Twig {
       $path = $_ENV['VIEWS_PATH'];
