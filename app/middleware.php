@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Response;
 use Todo\Controllers\_404Controller;
 use Slim\Exception\HttpNotFoundException;
+use Slim\Views\TwigMiddleware;
 
 return function (App $app) {
   $settings = $app->getContainer()->get('settings');
@@ -16,7 +17,6 @@ return function (App $app) {
     $settings['logErrors']
   );
 
-  
   $customErrorHandler = function (
     ServerRequestInterface $request,
     Throwable $exception,
@@ -29,4 +29,6 @@ return function (App $app) {
   };
   
   $errorMiddleware->setErrorHandler(HttpNotFoundException::class, $customErrorHandler);
+  
+  $app->add(TwigMiddleware::createFromContainer($app));
 };

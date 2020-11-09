@@ -1,7 +1,17 @@
 <?php
+declare(strict_types=1);
 
-use Todo\Controllers\LoginController;
-use Todo\Controllers\SignupController;
+use Todo\Controllers\AuthController;
+use Todo\Controllers\HomeController;
 
-$app->get('/[login]', LoginController::class . ':render');
-$app->get('/signup', SignupController::class . ':render');
+$container->set('router', \DI\value($app->getRouteCollector()->getRouteParser()));
+
+$app->get('/login', AuthController::class.':getLogin')->setName('login');
+$app->post('/login', AuthController::class.':postLogin');
+
+$app->get('/logout', AuthController::class.':logout');
+
+$app->get('/signup', AuthController::class.':getSignup')->setName('signup');
+$app->post('/signup', AuthController::class.':postSignup');
+
+$app->get('/', HomeController::class.':render')->setName('home');

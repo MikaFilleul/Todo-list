@@ -1,11 +1,13 @@
 body {
-  padding: 1em;
+  padding: 1rem;
   background-color: #282828;
   color: snow;
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  position: relative;
+  font-size: calc(10px + 1vmin);
 }
 
 .div-w75 {
@@ -13,8 +15,18 @@ body {
   max-width: 75%;
 }
 
+.mini-icon {
+  max-width: 1.5rem;
+  vertical-align: middle;
+}
+
 .img-icon {
-  padding: 1em;
-  width: 10em;
+  padding: 1rem;
+  width: 10rem;
   min-width: 50px;
+}
+
+.message {
+  top: 4rem;
+  right: 4rem;
 }

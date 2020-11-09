@@ -8,16 +8,21 @@
     <meta name="description" content="A simple Todo-list app, developpend in PHP.">
     <meta name="theme-color" content="#282828">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet/main.css"/>
+    <link rel="stylesheet" href="stylesheet/main.css">
     <link rel="icon" href="img/logo.svg">
     <title> Todo - {% block title %}Welcome{% endblock %}</title>
   </head>
 
   <body>
-    <div id="page" class="h-100">
+    <div id="page" class="h-100 position-relative">
       {% block page %}{% endblock %}
     </div>
+
+    {% if message %}
+    <div class="position-absolute message">
+      {% block notification %}{% endblock %}
+    </div>
+    {% endif %}
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

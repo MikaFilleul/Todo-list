@@ -3,12 +3,13 @@ declare(strict_types=1);
 
 namespace Todo\Controllers;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Todo\Models\Model;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
-class _404Controller extends Controller
+class _404Controller extends Model
 {
-  public function render(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
-    return $this->container->get('view')->render($response, "/page/404.twig");
+  public function render(Request $request, Response $response): Response {
+    return $this->view->render($response, "/page/404.twig");
   }
 }

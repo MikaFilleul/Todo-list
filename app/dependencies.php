@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use DI\ContainerBuilder;
 use Slim\Views\Twig;
@@ -24,7 +25,8 @@ return function () {
     },
     'view' => function () : Twig {
       $path = $_ENV['VIEWS_PATH'];
-      return Twig::create(__DIR__ . $path, [ "cache" => false ]);
+      $view = Twig::create(__DIR__ . $path, [ "cache" => false ]);
+      return $view;
     }
   ]);
 

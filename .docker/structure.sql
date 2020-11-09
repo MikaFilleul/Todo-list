@@ -88,19 +88,20 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL DEFAULT '',
+  `username` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
-INSERT INTO `users` (`id`, `email`, `password`)
+INSERT INTO `users` (`id`, `username`, `password`)
 VALUES
-	(1,'hakan@ebabil.fr','tartenpion'),
-	(2,'john@doe.com','johnny');
+	(1,'root','root'),
+	(2,'adonis','adonis'),
+  (3,'mika','mika');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

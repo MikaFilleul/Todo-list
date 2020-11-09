@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+session_start();
 
 use Slim\Factory\AppFactory;
 
@@ -11,8 +12,6 @@ $container = $dependencies();
 
 $settings = require __DIR__ . '/../app/settings.php';
 $settings($container);
-
-require __DIR__ . '/../app/models.php';
 
 AppFactory::setContainer($container);
 
