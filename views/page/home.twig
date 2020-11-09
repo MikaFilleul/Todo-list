@@ -3,5 +3,20 @@
 {% block title %}{{ username }}{% endblock %}
 
 {% block page %}
-<h1>HOME</h1>
+<div class="row w-100 h-100">
+    <div class="col-sm-3">
+      <div class="bg-dark px-2 py-4 h-100 d-flex flex-column align-items-center rounded">
+        <div class="row w-100 d-flex">
+          <h1 class="mx-auto mb-0">{{ username }}</h1>
+          <a class="btn btn-danger mx-auto" href="/logout">
+            <img class="mini-icon" src="img/logout.svg" alt="LOGOUT">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+      </div>
+    </div>
+</div>
 {% endblock %}
