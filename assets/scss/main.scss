@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 body {
   padding: 1rem;
   background-color: #282828;
@@ -7,7 +9,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   position: relative;
-  font-size: calc(10px + 1vmin);
+  font-size: calc(10px + 2vmin);
 }
 
 .div-w75 {
@@ -29,4 +31,8 @@ body {
 .message {
   top: 4rem;
   right: 4rem;
+}
+
+.c-pointer {
+  cursor: pointer;
 }

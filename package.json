@@ -2,9 +2,11 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "A simple todo-list",
-  "main": "index.js",
+  "main": "./assets/js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run sass",
+    "webpack": "webpack assets/js/index.js public/dist/bundle.js",
+    "sass": "sass assets/scss/main.scss public/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,8 @@
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "webpack": "^5.4.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.2.0"
   }
 }
