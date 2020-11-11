@@ -17,8 +17,7 @@ class AuthController extends User
   public function postLogin(Request $request, Response $response): Response {
     $data = $request->getParsedBody();
 
-    $this->setInfo($data['username'], $data['password']);
-    if($this->userLogin()) {
+    if($this->userLogin($data['username'], $data['password'])) {
       $_SESSION['username'] = $data['username'];
       return $response->withHeader('Location', $this->router->urlFor('home'));
     }

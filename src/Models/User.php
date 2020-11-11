@@ -4,27 +4,10 @@ declare(strict_types=1);
 namespace Todo\Models;
 
 class User extends Model {
-  static string $table = 'users';
-
-  protected array $info;
-
-  protected function setInfo(string $username, string $password): void {
-    $this->info['username'] = $username;
-    $this->info['password'] = $password;
-  }
-
-  protected function getInfo(): string {
-    return $this->info['username'];
-  }
-
-  protected function userLogin(): bool {
-    if (empty($this->info)) {
-      return false;
-    }
-
+  protected function userLogin(string $username, string $password): bool {
     $query = 'SELECT 1 FROM users WHERE username = ? AND password = ?';
     $stmt = $this->db->prepare($query);
-    $stmt->execute([$this->info['username'], $this->info['password']]);
+    $stmt->execute([$username, $password]);
     $res = $stmt->fetchAll();
     
     if (empty($res)) {

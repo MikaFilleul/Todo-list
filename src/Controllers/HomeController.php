@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class HomeController extends Model
 {
-  public function render(Request $request, Response $response, array $args): Response {
+  public function getHome(Request $request, Response $response, array $args): Response {
     if (!$_SESSION['username']) {
       return $response->withHeader('Location', $this->router->urlFor('login'));
     }
