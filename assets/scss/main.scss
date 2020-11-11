@@ -9,7 +9,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   position: relative;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
 }
 
 .div-w75 {
@@ -33,6 +33,29 @@ body {
   right: 4rem;
 }
 
-.c-pointer {
-  cursor: pointer;
+.m-w-48 {
+  width: 48%;
+  max-width: 48%;
+}
+
+.m-h-24 {
+  height: 24%;
+  max-height: 24%;
+}
+
+.m-h-74 {
+  height: 74%;
+  max-height: 74%;
+}
+
+.round-border-left {
+  border-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.round-border-right {
+  border-radius: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }

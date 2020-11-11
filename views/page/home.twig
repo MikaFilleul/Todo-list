@@ -3,83 +3,42 @@
 {% block title %}{{ username }}{% endblock %}
 
 {% block page %}
-<div class="row w-100 h-100">
-    <div class="col-md-4 h-100">
-      <div class="bg-dark p-4 h-100 mh-100 d-flex flex-column align-items-center rounded">
-        <div class="d-flex flex-row w-100">
-          <h1 class="mx-auto mb-0 overflow-auto">{{ username }}</h1>
-          <a class="btn btn-danger d-flex justify-content-center align-items-center ml-2" href="/logout">
-            <img class="mini-icon" src="img/logout.svg" alt="LOGOUT">
-          </a>
-        </div>
+<div class="row m-0 w-100 h-100">
+  <div class="col-md-4 h-100 mb-3">
+    <div class="bg-dark p-4 h-100 mh-100 d-flex flex-column align-items-center rounded">
+      <div class="d-flex flex-row w-100 mb-4">
+        <h1 class="mx-auto mb-0 overflow-hidden">{{ username }}</h1>
+        <a class="btn btn-danger d-flex justify-content-center align-items-center ml-2" href="/logout">
+          <img class="mini-icon" src="img/logout.svg" alt="LOGOUT">
+        </a>
+      </div>
 
-        <div class="list-group mt-4 w-100 overflow-auto">
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Cras justo odio
-            <span class="badge badge-primary badge-pill">14</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Dapibus ac facilisis in
-            <span class="badge badge-primary badge-pill">2</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-          <a class="list-group-item list-group-item-dark c-pointer d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-        </div>
+      <div class="d-flex flex-row w-100 mb-4">
+        <form action="/add" class="d-flex flex-row m-w-48 mr-auto">
+          <input class="form-control overflow-auto round-border-left" type="text" placeholder="Add" aria-label="Add">
+          <button class="btn btn-success d-flex justify-content-center align-items-center round-border-right" type="submit"><img class="mini-icon" src="img/add.svg" alt="ADD"></button>
+        </form>
+        <form action="/search" class="d-flex flex-row m-w-48">
+          <input class="form-control overflow-auto round-border-left" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-info d-flex justify-content-center align-items-center round-border-right" type="submit"><img class="mini-icon" src="img/search.svg" alt="SEARCH"></button>
+        </form>
+      </div>
+
+      <div class="list-group w-100 overflow-auto mb-4">
+        <a href="#" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between align-items-center">A simple primary list group item<span class="badge badge-primary badge-pill">14</span></a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-between align-items-center">A simple success list group item<span class="badge badge-primary badge-pill">14</span></a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between align-items-center">A simple danger list group item<span class="badge badge-primary badge-pill">14</span></a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-warning d-flex justify-content-between align-items-center">A simple warning list group item<span class="badge badge-primary badge-pill">14</span></a>
       </div>
     </div>
-    <div class="col-md-8">
-      <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-      </div>
+  </div>
+  
+  <div class="col-md-8 h-100">
+    <div class="bg-dark p-4 m-h-24 mb-3 d-flex flex-column align-items-center rounded">
     </div>
+
+    <div class="bg-dark p-4 m-h-74 mb-3 d-flex flex-column align-items-center rounded">
+    </div>
+  </div>
 </div>
 {% endblock %}
